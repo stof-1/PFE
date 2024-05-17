@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="sidebar">
+    <nav class="sidebar close">
         <header>
             <div class="image-text">
                 <span class="img">
@@ -21,7 +21,7 @@
                 </div>
             </div>
             
-            <i class="bx bx-chevron-left arrowL"></i>
+            <i class='bx bx-chevron-left toggle'></i>
 
         </header>
         <div class="menu-bar">
@@ -54,21 +54,43 @@
                         <i class="bx bx-home-alt"></i>
                         <p>hello world</p></a>
                     </li>
+                    <li class="logout">    
+                        <a href="#">
+                            <i class="bx bx-log-out"></i>
+                            <p>Logout</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
+        
+        <div class="bottom">
+            <li class="logout">    
+                <a href="#">
+                    <i class="bx bx-log-out"></i>
+                    <p>Logout</p>
+                </a>
+            </li>
+            
         </div>
+    </div>
     </nav>
     <div class="wrapper">
-        <form action="" method="post">
+        
             <h1>Login</h1>
+            <div class="button-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+                </div>
+            </div>
+    <div class="form-container">
+        <form class="LogF" id="LogF">
             <div class="username">
-                <!--<label for="username">Username</label><br>-->
                 <input type="text" name="username" placeholder="Username" required>
                 <i class="bx bxs-user"></i>
-
             </div>
-            <div class="password">
-                <!--<label for="password">Password</label><br>-->
+            <div class="password">  
                 <input type="password" name="password" placeholder="Password" required>
                 <i class="bx bxs-lock-alt"></i>
             </div>
@@ -76,11 +98,60 @@
                 <a href="#">Forget Password?</a>
             </div>
             <button type="submit" class="btn">Login</button>
-            <div class="signUP">
-                <p>Don't have an account?<a href="#">Sign Up</a></p>
-                
+        </form>
+        <form class="SignF" id="SignF">
+            <div class="username">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="bx bxs-user"></i>
             </div>
+            <div class="email">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="bx bxs-envelope"></i>
+            </div>
+            <div class="password">  
+                <input type="password" name="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="role">
+                <select name="role" id="role">
+                    
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="Project owner">Project owner</option>
+                    <option value="scrum master">scrum master</option>
+                    <option value="developer">developer</option>
+                </select>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            
+            <button type="submit" class="btn">Sign Up</button>
         </form>
     </div>
+    </div>
+
+    <script>
+        var x = document.getElementById("LogF");
+        var y = document.getElementById("SignF");
+        var z = document.getElementById("btn");
+
+        function signup() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px"
+        }
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px" ; 
+        }
+
+        var sidebar = document.querySelector(".sidebar");
+        var toggle = document.querySelector(".toggle");
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+
+
+    </script>
 </body>
 </html>

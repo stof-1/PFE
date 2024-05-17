@@ -11,9 +11,22 @@
     right: 0;
     height: 100%;
     width: 250px;
-    background-color: #fff;
+    background-color: #1ac3f74d;
     padding: 10px,14px;
 }
+.sidebar.close{
+    width: 10px;
+}
+.sidebar{
+    transition: width 0.5s ease;
+}
+
+
+
+
+
+
+
 .sidebar .image-text .img img{
     width:60px ;
     border-radius: 6px;
@@ -36,17 +49,21 @@
     display:inline-block;
     align-items: center;
 }
+.sidebar.close .text{
+    opacity: 0;
+}
 .menu-links li{
     height: 50px;
     margin: 15px;
     display: flex;
     align-items: center;
-
 }
+
 .menu-links li i{
     font-size: 20px;
     min-width: 40px;  
 }
+
 .search-box{
     background-color: lightblue;
     height: 40px;
@@ -93,15 +110,17 @@
     border-radius: 30px;
 }
 
-
 body{
     height: 100vh;
     background-color: #e4e9f7;
+    background: url(background.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    
 }
 .sidebar header{
     position: relative;
 }
-.sidebar header .arrowL{
+.sidebar header .toggle{
     position: absolute;
     top: 65%;
     left: -12px;
@@ -115,14 +134,95 @@ body{
     justify-content: center;
     border-radius: 50%;
     font-size: 23px;
+    transition: 0.5s;
 }
 .menu ul{
     list-style-type: none;
 }
-.sidebar header .arrowL:hover{
+.sidebar header .toggle:hover{
     background-color:gray;
     font-size: 30px;
 }
+/*side bar botom*/
+.sidebar .menu-bar .bottom li{
+    list-style: none;
+}
+
+.sidebar .menu-bar{
+    
+    height: calc(100% - 50px);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-bar .mode{
+    background-color: rgb(168, 189, 189);
+    border-radius: 40px;
+}
+
+.menu-bar .mode .moon-sun{
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+
+}
+.menu-bar .mode i{
+    position: absolute;
+}
+.bottom li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 20px;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    height: 50px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+.bottom li{
+    height: 50px;
+    margin-left: 35px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body{
     display: flex;
     justify-content: center;
@@ -131,14 +231,43 @@ body{
 }
 
 .wrapper{
+    position: relative;
     background-color:#2196F3 ;
     color: white;
     padding: 10px;
     line-height: 150%;
     border-radius: 30px;
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
     
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+    
+}
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,#FF5F6D , #FFC371);
+
+    border-radius: 30px;
+    transition: 0.5s;
 }
 .wrapper .signUP a{
     background-color: red;
@@ -148,13 +277,21 @@ body{
 }
 .wrapper form .username{
     position: relative;
-    width: 90%;
+    width: 120%;
     height: 40px;
-    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.wrapper form .email{
+    position: relative;
+    width: 120%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .wrapper form .password{
     position: relative;
-    width: 90%;
+    width: 120%;
     height: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -185,7 +322,7 @@ form i{
 }
 
 .wrapper .btn{
-    width: 95%;
+    width: 125%;
     height: 45px;
     font-weight: 700;
     font-size: 18px;
@@ -215,11 +352,41 @@ a{
     text-decoration: underline;
 }
 .signUP a{
-    margin-left: 20px;
-    
-    
+    margin-left: 20px;  
 }
 i{
     color: black;
 }
+#LogF{
+    position: absolute;
+    transition: left 0.5s ease;
+    left: 45px ;
+}
+#SignF{
+    transition: left 0.5s ease;
+    position: absolute;
+    left: 400px ;
+}
+.wrapper form .role {
+    position: relative;
+    width: 90%;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.wrapper form .role select {
+    width: 140%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding-left: 10px;
+    appearance: none;
+    background-color: #2196F3; 
+}
+
 
